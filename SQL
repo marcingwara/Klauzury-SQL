@@ -1,0 +1,93 @@
+Oto przegląd głównych klauzul i łączników używanych w SQL:
+
+Klauzule SQL
+
+1.	SELECT: Wybiera kolumny z tabeli lub wyników zapytania.
+SELECT column1, column2 FROM table_name;
+
+2.	FROM: Określa tabelę (lub tabele), z której mają być pobrane dane.
+FROM table_name;
+
+3.	WHERE: Filtruje wiersze na podstawie warunków.
+WHERE condition;
+
+4.	GROUP BY: Grupuje wiersze, które mają takie same wartości w określonych kolumnach.
+GROUP BY column1;
+
+5.	HAVING: Filtruje grupy wyników po użyciu GROUP BY.
+HAVING condition;
+
+6.	ORDER BY: Sortuje wyniki według jednej lub więcej kolumn.
+ORDER BY column1 [ASC|DESC];
+
+7.	JOIN: Łączy wiersze z dwóch lub więcej tabel na podstawie wspólnego klucza.
+JOIN table2 ON table1.column = table2.column;
+
+8.	LEFT JOIN (lub LEFT OUTER JOIN): Zwraca wszystkie wiersze z lewej tabeli oraz dopasowane wiersze z prawej tabeli; wiersze z lewej tabeli, które nie mają dopasowania w prawej tabeli, zawierają wartości NULL w kolumnach prawej tabeli.
+LEFT JOIN table2 ON table1.column = table2.column;
+
+9.	RIGHT JOIN (lub RIGHT OUTER JOIN): Zwraca wszystkie wiersze z prawej tabeli oraz dopasowane wiersze z lewej tabeli; wiersze z prawej tabeli, które nie mają dopasowania w lewej tabeli, zawierają wartości NULL w kolumnach lewej tabeli.
+RIGHT JOIN table2 ON table1.column = table2.column;
+
+10.	FULL JOIN (lub FULL OUTER JOIN): Zwraca wszystkie wiersze, gdy jest dopasowanie w jednej z tabel. Wiersze, które nie mają dopasowania w jednej tabeli, zawierają wartości NULL w kolumnach tej tabeli.
+FULL JOIN table2 ON table1.column = table2.column;
+
+11.	CROSS JOIN: Zwraca iloczyn kartezjański dwóch tabel, co oznacza, że zwraca wszystkie możliwe kombinacje wierszy z obu tabel.
+CROSS JOIN table2;
+
+12.	UNION: Łączy wyniki dwóch lub więcej zapytań SELECT. Usuwa duplikaty.
+SELECT column1 FROM table1
+UNION
+SELECT column1 FROM table2;
+
+13.	UNION ALL: Łączy wyniki dwóch lub więcej zapytań SELECT, zachowując duplikaty.
+SELECT column1 FROM table1
+UNION ALL
+SELECT column1 FROM table2;
+
+14.	INTERSECT: Zwraca wspólne wiersze między dwoma zapytaniami SELECT.
+SELECT column1 FROM table1
+INTERSECT
+SELECT column1 FROM table2;
+
+15.	EXCEPT (lub MINUS w niektórych bazach danych): Zwraca wiersze z pierwszego zapytania SELECT, które nie są w drugim zapytaniu SELECT.
+SELECT column1 FROM table1
+EXCEPT
+SELECT column1 FROM table2;
+
+16.	DISTINCT: Usuwa duplikaty z wyników zapytania.
+SELECT DISTINCT column1 FROM table_name;
+
+17.	LIMIT (w niektórych bazach danych: TOP): Ogranicza liczbę wierszy zwracanych przez zapytanie.
+SELECT column1 FROM table_name LIMIT 10;
+
+18.	OFFSET: Pomija określoną liczbę wierszy przed rozpoczęciem zwracania wyników.
+SELECT column1 FROM table_name LIMIT 10 OFFSET 5;
+
+Łączniki w SQL
+
+1.	AND: Łączy dwa warunki w klauzuli WHERE i zwraca wiersze, które spełniają oba warunki.
+WHERE condition1 AND condition2;
+
+2.	OR: Łączy dwa warunki w klauzuli WHERE i zwraca wiersze, które spełniają przynajmniej jeden z warunków.
+WHERE condition1 OR condition2;
+
+3.	NOT: Neguje warunek w klauzuli WHERE.
+WHERE NOT condition;
+
+4.	BETWEEN: Sprawdza, czy wartość mieści się w określonym zakresie.
+WHERE column BETWEEN value1 AND value2;
+
+5.	LIKE: Używa wzorców do dopasowania wartości tekstowych.
+WHERE column LIKE 'pattern%';
+
+6.	IN: Sprawdza, czy wartość znajduje się w określonej liście wartości.
+WHERE column IN (value1, value2, value3);
+
+7.	IS NULL: Sprawdza, czy wartość jest NULL.
+WHERE column IS NULL;
+
+8.	IS NOT NULL: Sprawdza, czy wartość nie jest NULL.
+WHERE column IS NOT NULL;
+
+To są najważniejsze klauzule i łączniki używane w SQL, które pozwalają na różnorodne manipulacje i pobieranie danych z baz danych.
